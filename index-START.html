@@ -9,9 +9,9 @@
 
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+        <div class="hand hour-hand" id = 'hourHand'>H</div>
+        <div class="hand min-hand" id = 'minHand'>M</div>
+        <div class="hand second-hand" id = 'secondHand'>S</div>
       </div>
     </div>
 
@@ -68,6 +68,17 @@
       transition-timing-function: cubic-bezier(0, 0, 1, 1)
     }
 
+    #hourHand {
+      background: pink;
+      height: 12px;
+      
+    }
+
+    #minHand {
+      background: green;
+      height: 10px;
+    }
+
   </style>
 
 
@@ -75,6 +86,7 @@
   const secondHand = document.querySelector('.second-hand');
   const minuteHand = document.querySelector('.min-hand');
   const hourHand = document.querySelector('.hour-hand');
+
 
   let now = new Date();
   let [hours, minutes, seconds] = now.toLocaleTimeString('it-IT').split(':');
